@@ -8,7 +8,7 @@ class OurHomeWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Center(child: Girl()));
+        child: Center(child: RandomColorChangerWidget()));
 
   }
 

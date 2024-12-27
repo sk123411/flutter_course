@@ -1,39 +1,49 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class RandomColorChangerWidget extends StatefulWidget {
+class RandomColorChangerWidget extends StatelessWidget {
 
-  @override
-  State<RandomColorChangerWidget> createState() => _RandomColorChangerWidgetState();
-}
 
-class _RandomColorChangerWidgetState extends State<RandomColorChangerWidget> {
-  Color color = Colors.black;
+  var randomColorChangerController = RandomColorChangerController();
 
-  var colorList = [Colors.black, Colors.red, Colors.blue,
-    Colors.grey, Colors.green, Colors.orange];
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        setState(() {
-          color = getRandomColor();
-
-        });
+        randomColorChangerController.color.value
+        = randomColorChangerController.getRandomColor();
       },
-      child: Container(
-        height: 200,
-        width: 200,
-        color: color,
+      child: Obx(
+        ()=> Container(
+          height: 200,
+          width: 200,
+          color: randomColorChangerController.color.value,
+        ),
       ),
     );
 
   }
 
+
+
+
+}
+
+class RandomColorChangerController extends GetxController {
+
+  Rx<Color> color = Colors.black.obs;
+
+  var colorList = [Colors.black, Colors.red, Colors.blue,
+    Colors.grey, Colors.green, Colors.orange];
+
+
   Color getRandomColor() {
     int random = Random().nextInt(colorList.length);
     return colorList[random];
   }
+
+
 }

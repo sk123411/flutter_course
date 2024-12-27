@@ -1,43 +1,74 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class GenderCheckboxWidget extends StatefulWidget{
-  @override
-  State<GenderCheckboxWidget> createState() => _GenderCheckboxWidgetState();
-}
-
-class _GenderCheckboxWidgetState extends State<GenderCheckboxWidget> {
-  bool checkboxValue = true;
-
+class GenderCheckboxWidget extends StatelessWidget {
+  var genderCheckboxController = Get.put(GenderCheckboxController());
 
   @override
   Widget build(BuildContext context) {
-
-  return Column(children: [
-    Text("Gender",style: TextStyle(fontSize: 24),),
-    SizedBox(height: 12,),
-
-    Row(
+    return Column(
       children: [
-        Checkbox(value: checkboxValue, onChanged: (v){
+        Text(
+          "Gender",
+          style: TextStyle(fontSize: 24),
+        ),
+        SizedBox(
+          height: 12,
+        ),
+        Row(
+          children: [
 
-          setState(() {
-            checkboxValue = v!;
+            //GetX State Management Using Obx
+            Obx(
+              ()=> Checkbox(
+                value: genderCheckboxController.checkboxValue.value,
+                onChanged: (v) {
+                  genderCheckboxController.checkboxValue.value = v!;
+                },
+              ),
+            ),
 
-          });
+            SizedBox(height: 12,),
+
+            Text("Male")
+          ],
+        ),
+
+        Row(
+          children: [
+            //GetX State Management Using GetBuilder
+            GetBuilder<GenderCheckboxController>(builder: (_){
+
+              return Checkbox(
+                value: genderCheckboxController.checkboxValueUsingGetBuilder,
+                onChanged: (v) {
+                  genderCheckboxController.tickGenderCheckBox(v!);
+
+                },
+              );
+            }),
+            SizedBox(height: 12,),
+
+            Text("Male")
+          ],
+        )
 
 
-        },),
 
-        Text("Male")
       ],
-    )
-
-  ],);
+    );
   }
 }
 
-class GenderCheckboxController extends GetxController{
+class GenderCheckboxController extends GetxController {
+  Rx<bool> checkboxValue = false.obs;
+  bool checkboxValueUsingGetBuilder = false;
+
+
+  void tickGenderCheckBox(bool value){
+    checkboxValueUsingGetBuilder = value;
+    update();
+  }
 
 
 }
