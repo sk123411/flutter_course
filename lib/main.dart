@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_course/advanced_ui_widgets/gridview_ui.dart';
+import 'package:flutter_course/advanced_ui_widgets/listview_ui.dart';
+import 'package:flutter_course/advanced_ui_widgets/my_expanded_widget.dart';
+import 'package:flutter_course/advanced_ui_widgets/my_flexible_widget.dart';
+import 'package:flutter_course/advanced_ui_widgets/my_layout_builder.dart';
+import 'package:flutter_course/advanced_ui_widgets/my_stack_widget.dart';
+import 'package:flutter_course/advanced_ui_widgets/my_wrap_widget.dart';
+import 'package:flutter_course/advanced_ui_widgets/preferred_sized_widget.dart';
 import 'package:flutter_course/navigation_and_routes/parent_screen.dart';
 import 'package:flutter_course/navigation_and_routes/screen_five.dart';
 import 'package:flutter_course/navigation_and_routes/screen_four.dart';
@@ -24,42 +32,45 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Scaffold(
-        body: ParentScreen()
+        body: MyStackWidget()
       ),
-      initialRoute: "first_screen",
 
-      // routes: {
-      //   "first_screen":(context) => ScreenOne(Colors.red, "Screen One"),
-      //   "second_screen":(context) => ScreenTwo(Colors.yellow, "Screen Two"),
-      //   "third_screen":(context) => ScreenThree(Colors.grey, "Screen Three"),
-      //   "four_screen":(context) => ScreenFour(Colors.blue, "Screen Four"),
-      //   "five_screen":(context) => ScreenFive(Colors.green, "Screen Five"),
+
+
+      // initialRoute: "first_screen",
+      //
+      // // routes: {
+      // //   "first_screen":(context) => ScreenOne(Colors.red, "Screen One"),
+      // //   "second_screen":(context) => ScreenTwo(Colors.yellow, "Screen Two"),
+      // //   "third_screen":(context) => ScreenThree(Colors.grey, "Screen Three"),
+      // //   "four_screen":(context) => ScreenFour(Colors.blue, "Screen Four"),
+      // //   "five_screen":(context) => ScreenFive(Colors.green, "Screen Five"),
+      // // },
+      // onGenerateRoute: (settings){
+      //
+      //   if(settings.name == "first_screen"){
+      //
+      //     return MaterialPageRoute(builder: (context) => ScreenOne(Colors.red, "Screen One"));
+      //   }else if(settings.name == "second_screen"){
+      //
+      //     return MaterialPageRoute(builder: (context) => ScreenTwo(Colors.yellow, "Screen Two"));
+      //
+      //   }else if(settings.name == "third_screen"){
+      //
+      //     return MaterialPageRoute(builder: (context) => ScreenThree(Colors.grey, "Screen Three"));
+      //
+      //   }else if(settings.name == "four_screen"){
+      //
+      //     return MaterialPageRoute(builder: (context) =>  ScreenFour(Colors.blue, "Screen Four"));
+      //
+      //   }else if(settings.name == "five_screen"){
+      //
+      //     return MaterialPageRoute(builder: (context) => ScreenFive(Colors.green, "Screen Five"));
+      //
+      //   }
+      //
+      //
       // },
-      onGenerateRoute: (settings){
-
-        if(settings.name == "first_screen"){
-
-          return MaterialPageRoute(builder: (context) => ScreenOne(Colors.red, "Screen One"));
-        }else if(settings.name == "second_screen"){
-
-          return MaterialPageRoute(builder: (context) => ScreenTwo(Colors.yellow, "Screen Two"));
-
-        }else if(settings.name == "third_screen"){
-
-          return MaterialPageRoute(builder: (context) => ScreenThree(Colors.grey, "Screen Three"));
-
-        }else if(settings.name == "four_screen"){
-
-          return MaterialPageRoute(builder: (context) =>  ScreenFour(Colors.blue, "Screen Four"));
-
-        }else if(settings.name == "five_screen"){
-
-          return MaterialPageRoute(builder: (context) => ScreenFive(Colors.green, "Screen Five"));
-
-        }
-
-
-      },
 
     );
   }
