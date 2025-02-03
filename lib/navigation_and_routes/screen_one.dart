@@ -19,12 +19,11 @@ class ScreenOne extends StatelessWidget {
 
           },
           child: Center(
-            // child: Text(
-            //   "$screenName",
-            //   style: TextStyle(color: Colors.white),
-            // ),
+            child: Text(
+              "$screenName",
+              style: TextStyle(color: Colors.white),
+            ),
 
-            child: buildAspect(),
           ),
         ),
       ),
@@ -32,27 +31,5 @@ class ScreenOne extends StatelessWidget {
   }
   
   
-  buildAspect(){
-    return Container(
-        child: Row(
-          children: [
-            Container(
-              height: 100,
 
-              width: 200,
-
-              color: Colors.green,
-
-
-            ),
-            Container(
-              height: 100,
-              width: 200,
-              color: Colors.blue,
-
-
-            ),
-          ],
-        ));
-  }
 }
