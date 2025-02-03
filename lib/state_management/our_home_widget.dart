@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_course/bird_stateless_widget.dart';
-import 'package:flutter_course/gender_checkbox_widget.dart';
-import 'package:flutter_course/girl_widget.dart';
-import 'package:flutter_course/random_color_changer_widget.dart';
+import 'package:flutter_course/state_management/bird_stateless_widget.dart';
+import 'package:flutter_course/state_management/random_color_changer_widget.dart';
 
 class OurHomeWidget extends StatelessWidget{
   @override
@@ -11,7 +9,6 @@ class OurHomeWidget extends StatelessWidget{
         child: Center(child: RandomColorChangerWidget()));
 
   }
-
 
   Widget buildBird(){
     return Container(
