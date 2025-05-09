@@ -8,6 +8,7 @@ import 'package:flutter_course/advanced_ui_widgets/my_stack_widget.dart';
 import 'package:flutter_course/advanced_ui_widgets/my_wrap_widget.dart';
 import 'package:flutter_course/advanced_ui_widgets/preferred_sized_widget.dart';
 import 'package:flutter_course/api_service/api_test_screen.dart';
+import 'package:flutter_course/custom_fonts/custom_font_screen.dart';
 import 'package:flutter_course/custom_widgets/custom_screen.dart';
 import 'package:flutter_course/form/sign_up_card.dart';
 import 'package:flutter_course/navigation_and_routes/parent_screen.dart';
@@ -17,6 +18,7 @@ import 'package:flutter_course/navigation_and_routes/screen_one.dart';
 import 'package:flutter_course/navigation_and_routes/screen_three.dart';
 import 'package:flutter_course/navigation_and_routes/screen_two.dart';
 import 'package:flutter_course/state_management/our_home_widget.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'sharing_data_between_screens/sign_up_card_name_and_age.dart';
 
@@ -35,11 +37,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        textTheme: GoogleFonts.caveatTextTheme(),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: Scaffold(
-        body: CustomScreen()
+        body: CustomFontScreen()
       ),
 
 
