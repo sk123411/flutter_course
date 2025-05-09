@@ -17,6 +17,8 @@ import 'package:flutter_course/navigation_and_routes/screen_three.dart';
 import 'package:flutter_course/navigation_and_routes/screen_two.dart';
 import 'package:flutter_course/state_management/our_home_widget.dart';
 
+import 'sharing_data_between_screens/sign_up_card_name_and_age.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -27,6 +29,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -34,7 +38,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Scaffold(
-        body: SignUpCard()
+        body: SignUpCardNameAndAge()
       ),
 
 
