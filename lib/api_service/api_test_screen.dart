@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_course/api_service/api_helper_mixin.dart';
 
 import 'api_service.dart';
 import 'person_model.dart';
@@ -12,11 +13,20 @@ class ApiTestScreen extends StatefulWidget {
   State<ApiTestScreen> createState() => _ApiTestScreenState();
 }
 
-class _ApiTestScreenState extends State<ApiTestScreen> {
+class _ApiTestScreenState extends State<ApiTestScreen> with ApiHelperMixin {
 
   TextEditingController nameController = TextEditingController();
   TextEditingController ageController = TextEditingController();
   List<Person>? persons;
+
+
+  @override
+  void initState() {
+    super.initState();
+
+    initApiHelper(context);
+
+  }
 
 
   void _call(String label, Future Function() call) async {
@@ -30,8 +40,8 @@ class _ApiTestScreenState extends State<ApiTestScreen> {
   }
 
 
-  Future<void> getUsers(ApiService api) async {
-    final response = await api.getRequest('/users');
+  Future<void> getUsers() async {
+    final response = await get('/users');
 
 
     if (response != null) {
@@ -58,7 +68,6 @@ class _ApiTestScreenState extends State<ApiTestScreen> {
   }
     @override
     Widget build(BuildContext context) {
-      final api = ApiService.withContext(context);
       return Scaffold(
 
         appBar: AppBar(title: const Text("API Test")),
@@ -72,7 +81,7 @@ class _ApiTestScreenState extends State<ApiTestScreen> {
                 backgroundColor: Colors.grey.shade300,
               ),
               onPressed: () =>
-                  _call("GET /success", () => api.getRequest('/success')),
+                  _call("GET /success", () => get('/success')),
               child: const Text("Test Valid/Invalid endpoint (GET)"),
             ),
 
@@ -105,7 +114,7 @@ class _ApiTestScreenState extends State<ApiTestScreen> {
                             _call(
                                 "POST /login (valid/invalid)",
                                     () =>
-                                    api.postRequest('/login', {
+                                    post('/login', {
                                       'name': nameController.text,
                                       'age': ageController.text,
                                     })),
@@ -122,7 +131,7 @@ class _ApiTestScreenState extends State<ApiTestScreen> {
                             _call(
                                 "POST /register",
                                     () =>
-                                    api.postRequest('/register', {
+                                    post('/register', {
                                       'name': nameController.text,
                                       'age': ageController.text,
                                     })),
@@ -143,7 +152,7 @@ class _ApiTestScreenState extends State<ApiTestScreen> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.grey.shade300,
               ),
-              onPressed: () => getUsers(api),
+              onPressed: () => getUsers(),
               child: const Text("Get All Users"),
             ),
             const SizedBox(height: 16),
@@ -174,7 +183,7 @@ class _ApiTestScreenState extends State<ApiTestScreen> {
                 backgroundColor: Colors.grey.shade300,
               ),
               onPressed: () =>
-                  _call("GET /error", () => api.getRequest('/error')),
+                  _call("GET /error", () => get('/error')),
               child: const Text("Test Server Error (500)"),
             ),
 
@@ -189,7 +198,7 @@ class _ApiTestScreenState extends State<ApiTestScreen> {
                 backgroundColor: Colors.grey.shade300,
               ),
               onPressed: () =>
-                  _call("GET /timeout", () => api.getRequest('/timeout')),
+                  _call("GET /timeout", () => get('/timeout')),
               child: const Text("Test Timeout (>10s)"),
             ),
 

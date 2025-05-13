@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class HelperMethods {
+mixin HelperMethods {
 
 /*
   Helper methods are small, reusable utility functions that perform common tasks
@@ -24,7 +24,7 @@ class HelperMethods {
 
 
   /// Generate a random number within a range
-  static int generateRandom(int min, int max) {
+   int generateRandom(int min, int max) {
     final random = Random();
     return min + random.nextInt(max - min);
   }

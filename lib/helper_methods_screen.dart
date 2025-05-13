@@ -9,7 +9,7 @@ class HelperMethodsScreen extends StatefulWidget {
   State<HelperMethodsScreen> createState() => _HelperMethodsScreenState();
 }
 
-class _HelperMethodsScreenState extends State<HelperMethodsScreen> {
+class _HelperMethodsScreenState extends State<HelperMethodsScreen> with HelperMethods {
 
   @override
   void initState() {
@@ -22,6 +22,8 @@ class _HelperMethodsScreenState extends State<HelperMethodsScreen> {
 
   void testHelperMethods() {
     String? nullableString = "test";
+    print("✅ Randon Number: ${generateRandom(15, 56)}");
+
     print("✅ String is not null or empty: ${HelperMethods.isNotNullOrEmpty(nullableString)}");
 
     print("🎨 Hex to Color: ${HelperMethods.hexToColor('#FF5733')}");
@@ -62,7 +64,7 @@ class _HelperMethodsScreenState extends State<HelperMethodsScreen> {
 
     print("🔣 Parse double: ${HelperMethods.parseDouble('12.34')}");
 
-    print("🎲 Generate random number: ${HelperMethods.generateRandom(10, 100)}");
+    print("🎲 Generate random number: ${generateRandom(10, 100)}");
   }
 
 
@@ -76,7 +78,7 @@ class _HelperMethodsScreenState extends State<HelperMethodsScreen> {
               label: "Print Random Number",
               onPressed: () {
 
-                var number = HelperMethods.generateRandom(10, 15);
+                var number = generateRandom(10, 15);
                 print("Number $number");
               }),
           SizedBox(height: 12,),
