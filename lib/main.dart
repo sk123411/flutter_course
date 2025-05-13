@@ -8,6 +8,7 @@ import 'package:flutter_course/advanced_ui_widgets/my_stack_widget.dart';
 import 'package:flutter_course/advanced_ui_widgets/my_wrap_widget.dart';
 import 'package:flutter_course/advanced_ui_widgets/preferred_sized_widget.dart';
 import 'package:flutter_course/api_service/api_test_screen.dart';
+import 'package:flutter_course/api_service/person_model.dart';
 import 'package:flutter_course/custom_fonts/custom_font_screen.dart';
 import 'package:flutter_course/custom_widgets/custom_screen.dart';
 import 'package:flutter_course/custom_widgets/custom_widgets_demo_screen.dart';
@@ -34,6 +35,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+
+    var person = Person("Dhiraj", 16);
+    var personWithNamedConst = Person.named(name: "Vinod", age: 41);
+
+    print("Initials : ${person.createDefault(name: "Raju",age: 24)}");
+
+
 
 
     return MaterialApp(

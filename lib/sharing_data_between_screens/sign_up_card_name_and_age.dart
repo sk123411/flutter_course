@@ -75,7 +75,7 @@ class SignUpCardNameAndAge extends StatelessWidget {
 
   void _submitForm(BuildContext context) async{
     if (_formKey.currentState!.validate()) {
-      await MyPrefs.saveUser(Person(name: nameController.text, age: ageController.text));
+      await MyPrefs.saveUser(Person.named(name: nameController.text, age: ageController.text));
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => SharingScreen()),
