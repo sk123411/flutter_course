@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_course/utils/helper_methods.dart';
 
 class CustomButton extends StatelessWidget {
   final String label;
@@ -15,7 +16,7 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.blue,
+        backgroundColor: HelperMethods.hexToColor("#e366ff"),
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
       ),
       child: Text(label, style: const TextStyle(fontSize: 16,color: Colors.white)),

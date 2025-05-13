@@ -11,6 +11,7 @@ import 'package:flutter_course/api_service/api_test_screen.dart';
 import 'package:flutter_course/custom_fonts/custom_font_screen.dart';
 import 'package:flutter_course/custom_widgets/custom_screen.dart';
 import 'package:flutter_course/form/sign_up_card.dart';
+import 'package:flutter_course/helper_methods_screen.dart';
 import 'package:flutter_course/navigation_and_routes/parent_screen.dart';
 import 'package:flutter_course/navigation_and_routes/screen_five.dart';
 import 'package:flutter_course/navigation_and_routes/screen_four.dart';
@@ -37,12 +38,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        textTheme: GoogleFonts.caveatTextTheme(),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: Scaffold(
-        body: CustomFontScreen()
+        body: HelperMethodsScreen()
       ),
 
 
