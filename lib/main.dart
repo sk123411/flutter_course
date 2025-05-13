@@ -10,6 +10,7 @@ import 'package:flutter_course/advanced_ui_widgets/preferred_sized_widget.dart';
 import 'package:flutter_course/api_service/api_test_screen.dart';
 import 'package:flutter_course/custom_fonts/custom_font_screen.dart';
 import 'package:flutter_course/custom_widgets/custom_screen.dart';
+import 'package:flutter_course/custom_widgets/custom_widgets_demo_screen.dart';
 import 'package:flutter_course/form/sign_up_card.dart';
 import 'package:flutter_course/helper_methods_screen.dart';
 import 'package:flutter_course/navigation_and_routes/parent_screen.dart';
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Scaffold(
-        body: HelperMethodsScreen()
+        body: CustomWidgetsDemoScreen()
       ),
 
 
