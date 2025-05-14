@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_course/api_service/api_helper_mixin.dart';
 
 import 'api_service.dart';
+import 'extended_person.dart';
 import 'person_model.dart';
 
 class ApiTestScreen extends StatefulWidget {
@@ -17,7 +18,7 @@ class _ApiTestScreenState extends State<ApiTestScreen> with ApiHelperMixin {
 
   TextEditingController nameController = TextEditingController();
   TextEditingController ageController = TextEditingController();
-  List<Person>? persons;
+  List<ExtendedPerson>? persons;
 
 
   @override
@@ -49,8 +50,8 @@ class _ApiTestScreenState extends State<ApiTestScreen> with ApiHelperMixin {
 
 
         print("data ${response["users"]}");
-        final List<Person> loadedUsers = (response['users'] as List)
-            .map((userJson) => Person.fromJson(userJson))
+        final List<ExtendedPerson> loadedUsers = (response['users'] as List)
+            .map((userJson) => ExtendedPerson.fromJson(userJson))
             .toList();
         setState(() {
           persons = loadedUsers;
@@ -165,7 +166,14 @@ class _ApiTestScreenState extends State<ApiTestScreen> with ApiHelperMixin {
                     final person = persons![index];
                     return ListTile(
                       title: Text(person.name),
-                      subtitle: Text("Age: ${person.age}"),
+                      subtitle: Column(
+
+                        children: [
+                          Text("Age: ${person.age}"),
+                          Text("Maritial Status: ${person.isMarried}")
+                        ],
+                        crossAxisAlignment:CrossAxisAlignment.start
+                      ),
                     );
                   },
                 ),
