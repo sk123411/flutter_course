@@ -23,6 +23,7 @@ import 'package:flutter_course/navigation_and_routes/screen_two.dart';
 import 'package:flutter_course/state_management/our_home_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'responsive_test_app.dart';
 import 'sharing_data_between_screens/sign_up_card_name_and_age.dart';
 
 void main() {
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Scaffold(
-        body: ApiTestScreen()
+        body: ResponsiveTestScreen()
       ),
 
 
