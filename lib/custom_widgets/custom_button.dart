@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_course/utils/helper_methods.dart';
+import 'package:flutter_course/helper/helper_methods.dart';
 
 class CustomButton extends StatelessWidget {
   final String label;

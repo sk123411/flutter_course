@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course/custom_widgets/custom_button.dart';
-import 'package:flutter_course/utils/helper_methods.dart';
+import 'package:flutter_course/helper/helper_methods.dart';
 
 class HelperMethodsScreen extends StatefulWidget {
   const HelperMethodsScreen({super.key});

@@ -4,7 +4,7 @@ import 'package:flutter_course/custom_widgets/custom_card.dart';
 import 'package:flutter_course/custom_widgets/gradient_button.dart';
 import 'package:flutter_course/custom_widgets/labelled_text_field.dart';
 import 'package:flutter_course/custom_widgets/loading_widget.dart';
-import 'package:flutter_course/custom_widgets/my_utility.dart';
+import 'package:flutter_course/utils/my_utility.dart';
 
 class CustomScreen extends StatelessWidget {
   CustomScreen({super.key});

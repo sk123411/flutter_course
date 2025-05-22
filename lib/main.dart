@@ -13,7 +13,7 @@ import 'package:flutter_course/custom_fonts/custom_font_screen.dart';
 import 'package:flutter_course/custom_widgets/custom_screen.dart';
 import 'package:flutter_course/custom_widgets/custom_widgets_demo_screen.dart';
 import 'package:flutter_course/form/sign_up_card.dart';
-import 'package:flutter_course/helper_methods_screen.dart';
+import 'package:flutter_course/helper/helper_methods_screen.dart';
 import 'package:flutter_course/navigation_and_routes/parent_screen.dart';
 import 'package:flutter_course/navigation_and_routes/screen_five.dart';
 import 'package:flutter_course/navigation_and_routes/screen_four.dart';
@@ -23,7 +23,7 @@ import 'package:flutter_course/navigation_and_routes/screen_two.dart';
 import 'package:flutter_course/state_management/our_home_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'responsive_test_app.dart';
+import 'responsive_ui/responsive_test_app.dart';
 import 'sharing_data_between_screens/sign_up_card_name_and_age.dart';
 
 void main() {
